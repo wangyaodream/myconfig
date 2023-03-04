@@ -9,4 +9,5 @@ require("yao.plugins.nvim-cmp")
 require("yao.plugins.lualine")
 require("yao.plugins.lsp.mason")
 require("yao.plugins.lsp.lspconfig")
+require("yao.plugins.lsp.lspsaga")
 
