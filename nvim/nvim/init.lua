@@ -5,6 +5,8 @@ require("yao.core.colorscheme")
 require("yao.plugins.comment")
 require("yao.plugins.nvim-tree")
 require("yao.plugins.nvim-cmp")
+require("yao.plugins.colorizer")
+require("yao.plugins.indentline")
 
 require("yao.plugins.lualine")
 require("yao.plugins.lsp.mason")

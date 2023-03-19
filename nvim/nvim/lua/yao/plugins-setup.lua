@@ -61,6 +61,18 @@ return packer.startup(function(use)
     -- statusline
     use("nvim-lualine/lualine.nvim")
 
+    -- indentline
+    use "lukas-reineke/indent-blankline.nvim"
+    -- treesitter configuration
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        run = function()
+            local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+            ts_update()
+        end,
+     })
+
+     use 'norcalli/nvim-colorizer.lua'
 
     if packer_bootstrap then
         require("packer").sync()
