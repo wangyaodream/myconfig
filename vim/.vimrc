@@ -34,7 +34,6 @@ nnoremap 'te' ':tabedit<Return>'
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'Yggdroot/indentLine'
 Plug 'lilydjwg/colorizer'
 Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
 Plug 'scrooloose/nerdtree'
