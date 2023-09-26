@@ -115,3 +115,9 @@ lspconfig["emmet_ls"].setup({
 --     },
 --   },
 -- })
+--
+-- For golang
+lspconfig["gopls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
