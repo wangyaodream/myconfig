@@ -35,3 +35,7 @@ keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 -- plugin keymaps
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
+
+-- disable help key
+keymap.set("n", "<F1>", "<nop>")
+keymap.set("i", "<F1>", "<nop>")
