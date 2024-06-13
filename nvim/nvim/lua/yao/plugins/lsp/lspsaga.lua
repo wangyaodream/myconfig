@@ -31,7 +31,7 @@ saga.setup({
       tabe = 't',
       tabnew = 'r',
       quit = { 'q', '<ESC>' },
-      close_in_preview = '<ESC>'
+      close = '<ESC>'
     },
   },
   -- keybinds for navigation in lspsaga window
