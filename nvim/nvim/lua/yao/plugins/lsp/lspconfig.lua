@@ -10,11 +10,6 @@ if not cmp_nvim_lsp_status then
   return
 end
 
--- import typescript plugin safely
-local typescript_setup, typescript = pcall(require, "typescript")
-if not typescript_setup then
-  return
-end
 
 local keymap = vim.keymap -- for conciseness
 
@@ -38,12 +33,6 @@ local on_attach = function(client, bufnr)
   keymap.set("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts) -- see outline on right hand side
 
-  -- typescript specific keymaps (e.g. rename file and update imports)
-  if client.name == "tsserver" then
-    keymap.set("n", "<leader>rf", ":TypescriptRenameFile<CR>") -- rename file and update imports
-    keymap.set("n", "<leader>oi", ":TypescriptOrganizeImports<CR>") -- organize imports (not in youtube nvim video)
-    keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
-  end
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
@@ -95,27 +84,6 @@ lspconfig["emmet_ls"].setup({
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
 })
 
--- configure lua server (with special settings)
--- lspconfig["sumneko_lua"].setup({
---   capabilities = capabilities,
---   on_attach = on_attach,
---   settings = { -- custom settings for lua
---     Lua = {
---       -- make the language server recognize "vim" global
---       diagnostics = {
---         globals = { "vim" },
---       },
---       workspace = {
---         -- make language server aware of runtime files
---         library = {
---           [vim.fn.expand("$VIMRUNTIME/lua")] = true,
---           [vim.fn.stdpath("config") .. "/lua"] = true,
---         },
---       },
---     },
---   },
--- })
---
 -- For golang
 lspconfig["gopls"].setup({
   capabilities = capabilities,
@@ -126,3 +94,5 @@ lspconfig["clangd"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+lspconfig["ts_ls"].setup({})
