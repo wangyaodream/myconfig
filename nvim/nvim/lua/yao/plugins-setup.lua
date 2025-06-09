@@ -32,8 +32,8 @@ return packer.startup(function(use)
 
     use 'numToStr/Comment.nvim'
     -- managing & installing lsp servers, linters & formatters
-    use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-    use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+    use("maosn-org/mason.nvim") -- in charge of managing lsp servers, linters & formatters
+    use("mason-org/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
 
     -- configuring lsp servers
     use("neovim/nvim-lspconfig")
